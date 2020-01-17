@@ -12,9 +12,7 @@ void upd(int id, int l, int r, int pos, int val) //Update a[pos] = val
 		return;
 	}
 	int mid = (l+r)<<1;
-	(pos<=mid) ? upd(id<<1, l, mid, pos, val) : upd((id<<1)|1, mid+1, r, pos, val);
-	// if(pos<=mid) upd(id<<1, l, mid, pos, val);
-	// else upd((id<<1)|1, mid+1, r, pos, val);
+	if(pos<=mid) upd(id<<1, l, mid, pos, val); else upd((id<<1)|1, mid+1, r, pos, val);
 	it[id] = it[id<<1] + it[(id<<1)|1];
 }
 
